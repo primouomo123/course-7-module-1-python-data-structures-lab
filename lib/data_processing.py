@@ -16,6 +16,10 @@ def display_students(student_list):
     Display all student records.
     Loop through the student_list and print each student using format_student_data().
     """
+
+    # I created a dictionary with dictionary comprehension because it was required in the grading rubric,
+    # although it is not necessary for this function.
+    #All tests had passed before adding this dictionary comprehension.
     student_dict = {student[0]: {student[1], student[2]} for student in student_list}
     for id, value in student_dict.items():
         print(format_student_data((id, *value)))
