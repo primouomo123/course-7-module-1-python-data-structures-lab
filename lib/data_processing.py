@@ -16,5 +16,6 @@ def display_students(student_list):
     Display all student records.
     Loop through the student_list and print each student using format_student_data().
     """
-    for student in student_list:
-        print(format_student_data(student))
+    student_dict = {student[0]: {student[1], student[2]} for student in student_list}
+    for id, value in student_dict.items():
+        print(format_student_data((id, *value)))
