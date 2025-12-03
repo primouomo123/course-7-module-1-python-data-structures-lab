@@ -20,6 +20,6 @@ def display_students(student_list):
     # I created a dictionary with dictionary comprehension because it was required in the grading rubric,
     # although it is not necessary for this function.
     #All tests had passed before adding this dictionary comprehension.
-    student_dict = {student[0]: {student[1], student[2]} for student in student_list}
+    student_dict = {student[0]: {"Name":student[1], "Major":student[2]} for student in student_list}
     for id, value in student_dict.items():
-        print(format_student_data((id, *value)))
+        print(format_student_data((id, value["Name"], value["Major"])))
